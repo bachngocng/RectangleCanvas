@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="rectangle.js"></script>
+</head>
+<body>
+<canvas id="myCanvas" width="1400" height="700" style="border: 1px solid #000000;"></canvas>
+<script>
+    let ctx = document.getElementById("myCanvas").getContext("2d");
+    let width = Math.floor(Math.random()*200);
+    let height = Math.floor(Math.random()*200);
+    let x = Math.random() * window.innerWidth;
+    let y = Math.random() * window.innerHeight;
+    let rectangle= new Rectangle(x, y, width, height);
+    let area = rectangle.getArea();
+    let perimeter = rectangle.getPerimeter();
+    alert("Chu vi là: " + perimeter + " , " + "diện tích là " + area);
+    ctx.beginPath();
+    ctx.fillStyle = rectangle.getRandomColor();
+    ctx.fillRect(x,y,width,height)
+</script>
+</body>
+</html>
